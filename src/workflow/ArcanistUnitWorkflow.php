@@ -3,7 +3,7 @@
 /**
  * Runs unit tests which cover your changes.
  */
-final class ArcanistUnitWorkflow extends ArcanistWorkflow {
+final class ArcanistUnitWorkflow extends ArcanistArcWorkflow {
 
   const RESULT_OKAY      = 0;
   const RESULT_UNSOUND   = 1;
@@ -18,7 +18,7 @@ final class ArcanistUnitWorkflow extends ArcanistWorkflow {
     return 'unit';
   }
 
-  public function getCommandSynopses() {
+  public function getWorkflowSynopses() {
     return phutil_console_format(<<<EOTEXT
       **unit** [__options__] [__paths__]
       **unit** [__options__] --rev [__rev__]
@@ -26,7 +26,7 @@ EOTEXT
       );
   }
 
-  public function getCommandHelp() {
+  public function getWorkflowHelp() {
     return phutil_console_format(<<<EOTEXT
           Supports: git, svn, hg
           Run unit tests that cover specified paths. If no paths are specified,

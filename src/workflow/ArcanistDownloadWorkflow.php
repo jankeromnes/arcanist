@@ -3,7 +3,7 @@
 /**
  * Download a file from Phabricator.
  */
-final class ArcanistDownloadWorkflow extends ArcanistWorkflow {
+final class ArcanistDownloadWorkflow extends ArcanistArcWorkflow {
 
   private $id;
   private $saveAs;
@@ -13,14 +13,14 @@ final class ArcanistDownloadWorkflow extends ArcanistWorkflow {
     return 'download';
   }
 
-  public function getCommandSynopses() {
+  public function getWorkflowSynopses() {
     return phutil_console_format(<<<EOTEXT
       **download** __file__ [--as __name__] [--show]
 EOTEXT
       );
   }
 
-  public function getCommandHelp() {
+  public function getWorkflowHelp() {
     return phutil_console_format(<<<EOTEXT
           Supports: filesystems
           Download a file to local disk, e.g.:

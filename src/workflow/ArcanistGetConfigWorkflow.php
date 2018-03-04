@@ -3,20 +3,20 @@
 /**
  * Read configuration settings.
  */
-final class ArcanistGetConfigWorkflow extends ArcanistWorkflow {
+final class ArcanistGetConfigWorkflow extends ArcanistArcWorkflow {
 
   public function getWorkflowName() {
     return 'get-config';
   }
 
-  public function getCommandSynopses() {
+  public function getWorkflowSynopses() {
     return phutil_console_format(<<<EOTEXT
       **get-config** [__options__] -- [__name__ ...]
 EOTEXT
       );
   }
 
-  public function getCommandHelp() {
+  public function getWorkflowHelp() {
     return phutil_console_format(<<<EOTEXT
           Supports: cli
           Reads an arc configuration option. With no argument, reads all

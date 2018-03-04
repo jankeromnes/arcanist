@@ -1,21 +1,20 @@
 <?php
 
-final class ArcanistAnoidWorkflow extends ArcanistWorkflow {
+final class ArcanistAnoidWorkflow extends ArcanistArcWorkflow {
 
   public function getWorkflowName() {
     return 'anoid';
   }
 
-  public function getCommandSynopses() {
-    return phutil_console_format(<<<EOTEXT
-      **anoid**
-EOTEXT
-      );
+  public function getWorkflowSynopses() {
+    return array(
+      pht('**anoid**'),
+    );
   }
 
-  public function getCommandHelp() {
-    return phutil_console_format(<<<EOTEXT
-          There's only one way to find out...
+  public function getWorkflowHelp() {
+    return pht(<<<EOTEXT
+There's only one way to find out...
 EOTEXT
       );
   }

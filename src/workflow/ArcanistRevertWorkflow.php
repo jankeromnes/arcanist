@@ -3,20 +3,20 @@
 /**
  * Redirects to `arc backout` workflow.
  */
-final class ArcanistRevertWorkflow extends ArcanistWorkflow {
+final class ArcanistRevertWorkflow extends ArcanistArcWorkflow {
 
   public function getWorkflowName() {
     return 'revert';
   }
 
-  public function getCommandSynopses() {
+  public function getWorkflowSynopses() {
     return phutil_console_format(<<<EOTEXT
       **revert**
 EOTEXT
     );
   }
 
-  public function getCommandHelp() {
+  public function getWorkflowHelp() {
     return phutil_console_format(<<<EOTEXT
     Please use arc backout instead
 EOTEXT

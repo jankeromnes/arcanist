@@ -3,20 +3,20 @@
 /**
  * Explicitly closes Differential revisions.
  */
-final class ArcanistCloseRevisionWorkflow extends ArcanistWorkflow {
+final class ArcanistCloseRevisionWorkflow extends ArcanistArcWorkflow {
 
   public function getWorkflowName() {
     return 'close-revision';
   }
 
-  public function getCommandSynopses() {
+  public function getWorkflowSynopses() {
     return phutil_console_format(<<<EOTEXT
       **close-revision** [__options__] __revision__
 EOTEXT
       );
   }
 
-  public function getCommandHelp() {
+  public function getWorkflowHelp() {
     return phutil_console_format(<<<EOTEXT
           Supports: git, hg, svn
           Close a revision which has been committed (svn) or pushed (git, hg).

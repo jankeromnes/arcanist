@@ -9,20 +9,20 @@
  * definition it had when it first loaded. This is normally fine, but
  * problematic in this case because `arc liberate` modifies library definitions.
  */
-final class ArcanistLiberateWorkflow extends ArcanistWorkflow {
+final class ArcanistLiberateWorkflow extends ArcanistArcWorkflow {
 
   public function getWorkflowName() {
     return 'liberate';
   }
 
-  public function getCommandSynopses() {
+  public function getWorkflowSynopses() {
     return phutil_console_format(<<<EOTEXT
       **liberate** [__path__]
 EOTEXT
       );
   }
 
-  public function getCommandHelp() {
+  public function getWorkflowHelp() {
     return phutil_console_format(<<<EOTEXT
           Supports: libphutil
           Create or update a libphutil library, generating required metadata

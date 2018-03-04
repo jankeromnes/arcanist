@@ -3,20 +3,20 @@
 /**
  * Quickly create a task.
  */
-final class ArcanistTodoWorkflow extends ArcanistWorkflow {
+final class ArcanistTodoWorkflow extends ArcanistArcWorkflow {
 
   public function getWorkflowName() {
     return 'todo';
   }
 
-  public function getCommandSynopses() {
+  public function getWorkflowSynopses() {
     return phutil_console_format(<<<EOTEXT
       **todo** __summary__ [__options__]
 EOTEXT
       );
   }
 
-  public function getCommandHelp() {
+  public function getWorkflowHelp() {
     return phutil_console_format(<<<EOTEXT
         Quickly create a task for yourself.
 EOTEXT

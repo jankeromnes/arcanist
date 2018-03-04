@@ -3,13 +3,13 @@
 /**
  * Show which revision or revisions are in the working copy.
  */
-final class ArcanistWhichWorkflow extends ArcanistWorkflow {
+final class ArcanistWhichWorkflow extends ArcanistArcWorkflow {
 
   public function getWorkflowName() {
     return 'which';
   }
 
-  public function getCommandSynopses() {
+  public function getWorkflowSynopses() {
     return phutil_console_format(<<<EOTEXT
       **which** [options] (svn)
       **which** [options] [__commit__] (hg, git)
@@ -17,7 +17,7 @@ EOTEXT
       );
   }
 
-  public function getCommandHelp() {
+  public function getWorkflowHelp() {
     return phutil_console_format(<<<EOTEXT
           Supports: svn, git, hg
           Shows which repository the current working copy corresponds to,

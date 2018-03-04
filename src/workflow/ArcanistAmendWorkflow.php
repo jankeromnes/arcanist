@@ -3,26 +3,25 @@
 /**
  * Synchronizes commit messages from Differential.
  */
-final class ArcanistAmendWorkflow extends ArcanistWorkflow {
+final class ArcanistAmendWorkflow extends ArcanistArcWorkflow {
 
   public function getWorkflowName() {
     return 'amend';
   }
 
-  public function getCommandSynopses() {
-    return phutil_console_format(<<<EOTEXT
-      **amend** [--revision __revision_id__] [--show]
-EOTEXT
-      );
+  public function getWorkflowSynopses() {
+    return array(
+      pht('**amend** [--revision __revision__] [--show]')
+    );
   }
 
-  public function getCommandHelp() {
-    return phutil_console_format(<<<EOTEXT
-          Supports: git, hg
-          Amend the working copy, synchronizing the local commit message from
-          Differential.
+  public function getWorkflowHelp() {
+    return pht(<<<EOTEXT
+Supports: git, hg
+Amend the working copy, synchronizing the local commit message from
+Differential.
 
-          Supported in Mercurial 2.2 and newer.
+Supported in Mercurial 2.2 and newer.
 EOTEXT
       );
   }

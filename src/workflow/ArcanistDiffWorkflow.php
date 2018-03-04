@@ -8,7 +8,7 @@
  * @task diffspec   Diff Specification
  * @task diffprop   Diff Properties
  */
-final class ArcanistDiffWorkflow extends ArcanistWorkflow {
+final class ArcanistDiffWorkflow extends ArcanistArcWorkflow {
 
   private $console;
   private $hasWarnedExternals = false;
@@ -36,7 +36,7 @@ final class ArcanistDiffWorkflow extends ArcanistWorkflow {
     return 'diff';
   }
 
-  public function getCommandSynopses() {
+  public function getWorkflowSynopses() {
     return phutil_console_format(<<<EOTEXT
       **diff** [__paths__] (svn)
       **diff** [__commit__] (git, hg)
@@ -44,7 +44,7 @@ EOTEXT
       );
   }
 
-  public function getCommandHelp() {
+  public function getWorkflowHelp() {
     return phutil_console_format(<<<EOTEXT
           Supports: git, svn, hg
           Generate a Differential diff or revision from local changes.

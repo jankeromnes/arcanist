@@ -3,7 +3,7 @@
 /**
  * Executes "svn commit" once a revision has been "Accepted".
  */
-final class ArcanistCommitWorkflow extends ArcanistWorkflow {
+final class ArcanistCommitWorkflow extends ArcanistArcWorkflow {
 
   private $revisionID;
 
@@ -11,14 +11,14 @@ final class ArcanistCommitWorkflow extends ArcanistWorkflow {
     return 'commit';
   }
 
-  public function getCommandSynopses() {
+  public function getWorkflowSynopses() {
     return phutil_console_format(<<<EOTEXT
       **commit** [--revision __revision_id__] [--show]
 EOTEXT
       );
   }
 
-  public function getCommandHelp() {
+  public function getWorkflowHelp() {
     return phutil_console_format(<<<EOTEXT
           Supports: svn
           Commit a revision which has been accepted by a reviewer.

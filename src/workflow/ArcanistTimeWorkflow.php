@@ -9,14 +9,14 @@ final class ArcanistTimeWorkflow extends ArcanistPhrequentWorkflow {
     return 'time';
   }
 
-  public function getCommandSynopses() {
+  public function getWorkflowSynopses() {
     return phutil_console_format(<<<EOTEXT
       **time**
 EOTEXT
       );
   }
 
-  public function getCommandHelp() {
+  public function getWorkflowHelp() {
     return phutil_console_format(<<<EOTEXT
           Show what you're currently tracking in Phrequent.
 EOTEXT

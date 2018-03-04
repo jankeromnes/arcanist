@@ -3,20 +3,20 @@
 /**
  * Covers your professional reputation by blaming changes to locate reviewers.
  */
-final class ArcanistCoverWorkflow extends ArcanistWorkflow {
+final class ArcanistCoverWorkflow extends ArcanistArcWorkflow {
 
   public function getWorkflowName() {
     return 'cover';
   }
 
-  public function getCommandSynopses() {
+  public function getWorkflowSynopses() {
     return phutil_console_format(<<<EOTEXT
       **cover** [--rev __revision__] [__path__ ...]
 EOTEXT
       );
   }
 
-  public function getCommandHelp() {
+  public function getWorkflowHelp() {
     return phutil_console_format(<<<EOTEXT
           Supports: svn, git, hg
           Cover your... professional reputation. Show blame for the lines you

@@ -3,7 +3,7 @@
 /**
  * Exports changes from Differential or the working copy to a file.
  */
-final class ArcanistExportWorkflow extends ArcanistWorkflow {
+final class ArcanistExportWorkflow extends ArcanistArcWorkflow {
 
   const SOURCE_LOCAL      = 'local';
   const SOURCE_DIFF       = 'diff';
@@ -21,7 +21,7 @@ final class ArcanistExportWorkflow extends ArcanistWorkflow {
     return 'export';
   }
 
-  public function getCommandSynopses() {
+  public function getWorkflowSynopses() {
     return phutil_console_format(<<<EOTEXT
       **export** [__paths__] __format__ (svn)
       **export** [__commit_range__] __format__ (git, hg)
@@ -31,7 +31,7 @@ EOTEXT
       );
   }
 
-  public function getCommandHelp() {
+  public function getWorkflowHelp() {
     return phutil_console_format(<<<EOTEXT
           Supports: svn, git, hg
           Export the local changeset (or a Differential changeset) to a file,

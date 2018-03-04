@@ -5,7 +5,7 @@
  *
  * @concrete-extensible
  */
-class ArcanistFeatureWorkflow extends ArcanistWorkflow {
+class ArcanistFeatureWorkflow extends ArcanistArcWorkflow {
 
   private $branches;
 
@@ -13,7 +13,7 @@ class ArcanistFeatureWorkflow extends ArcanistWorkflow {
     return 'feature';
   }
 
-  public function getCommandSynopses() {
+  public function getWorkflowSynopses() {
     return phutil_console_format(<<<EOTEXT
       **feature** [__options__]
       **feature** __name__ [__start__]
@@ -21,7 +21,7 @@ EOTEXT
       );
   }
 
-  public function getCommandHelp() {
+  public function getWorkflowHelp() {
     return phutil_console_format(<<<EOTEXT
           Supports: git, hg
           A wrapper on 'git branch' or 'hg bookmark'.

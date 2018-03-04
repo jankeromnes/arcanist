@@ -9,14 +9,14 @@ final class ArcanistStopWorkflow extends ArcanistPhrequentWorkflow {
     return 'stop';
   }
 
-  public function getCommandSynopses() {
+  public function getWorkflowSynopses() {
     return phutil_console_format(<<<EOTEXT
       **stop** [--note __note__] [__objects__]
 EOTEXT
       );
   }
 
-  public function getCommandHelp() {
+  public function getWorkflowHelp() {
     return phutil_console_format(<<<EOTEXT
           Stop tracking work in Phrequent.
 EOTEXT

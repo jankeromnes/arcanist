@@ -3,7 +3,7 @@
 /**
  * Runs lint rules on changes.
  */
-final class ArcanistLintWorkflow extends ArcanistWorkflow {
+final class ArcanistLintWorkflow extends ArcanistArcWorkflow {
 
   const RESULT_OKAY       = 0;
   const RESULT_WARNINGS   = 1;
@@ -37,7 +37,7 @@ final class ArcanistLintWorkflow extends ArcanistWorkflow {
     return $this;
   }
 
-  public function getCommandSynopses() {
+  public function getWorkflowSynopses() {
     return phutil_console_format(<<<EOTEXT
       **lint** [__options__] [__paths__]
       **lint** [__options__] --rev [__rev__]
@@ -45,7 +45,7 @@ EOTEXT
       );
   }
 
-  public function getCommandHelp() {
+  public function getWorkflowHelp() {
     return phutil_console_format(<<<EOTEXT
           Supports: git, svn, hg
           Run static analysis on changes to check for mistakes. If no files

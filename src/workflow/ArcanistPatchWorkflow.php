@@ -3,7 +3,7 @@
 /**
  * Applies changes from Differential or a file to the working copy.
  */
-final class ArcanistPatchWorkflow extends ArcanistWorkflow {
+final class ArcanistPatchWorkflow extends ArcanistArcWorkflow {
 
   const SOURCE_BUNDLE         = 'bundle';
   const SOURCE_PATCH          = 'patch';
@@ -17,7 +17,7 @@ final class ArcanistPatchWorkflow extends ArcanistWorkflow {
     return 'patch';
   }
 
-  public function getCommandSynopses() {
+  public function getWorkflowSynopses() {
     return phutil_console_format(<<<EOTEXT
       **patch** __D12345__
       **patch** __--revision__ __revision_id__
@@ -28,7 +28,7 @@ EOTEXT
       );
   }
 
-  public function getCommandHelp() {
+  public function getWorkflowHelp() {
     return phutil_console_format(<<<EOTEXT
           Supports: git, svn, hg
           Apply the changes in a Differential revision, patchfile, or arc

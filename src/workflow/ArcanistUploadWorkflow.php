@@ -3,7 +3,7 @@
 /**
  * Upload a file to Phabricator.
  */
-final class ArcanistUploadWorkflow extends ArcanistWorkflow {
+final class ArcanistUploadWorkflow extends ArcanistArcWorkflow {
 
   private $paths;
   private $json;
@@ -12,14 +12,14 @@ final class ArcanistUploadWorkflow extends ArcanistWorkflow {
     return 'upload';
   }
 
-  public function getCommandSynopses() {
+  public function getWorkflowSynopses() {
     return phutil_console_format(<<<EOTEXT
       **upload** __file__ [__file__ ...] [--json]
 EOTEXT
       );
   }
 
-  public function getCommandHelp() {
+  public function getWorkflowHelp() {
     return phutil_console_format(<<<EOTEXT
           Supports: filesystems
           Upload a file from local disk.

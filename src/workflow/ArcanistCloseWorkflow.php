@@ -3,7 +3,7 @@
 /**
  * Close a task.
  */
-final class ArcanistCloseWorkflow extends ArcanistWorkflow {
+final class ArcanistCloseWorkflow extends ArcanistArcWorkflow {
 
   private $tasks;
   private $statusOptions;
@@ -33,14 +33,14 @@ final class ArcanistCloseWorkflow extends ArcanistWorkflow {
     return 'close';
   }
 
-  public function getCommandSynopses() {
+  public function getWorkflowSynopses() {
     return phutil_console_format(<<<EOTEXT
       **close** __task_id__ [__options__]
 EOTEXT
       );
   }
 
-  public function getCommandHelp() {
+  public function getWorkflowHelp() {
     return phutil_console_format(<<<EOTEXT
         Close a task or otherwise update its status.
 EOTEXT

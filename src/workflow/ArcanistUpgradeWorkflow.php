@@ -3,20 +3,20 @@
 /**
  * Upgrade arcanist itself.
  */
-final class ArcanistUpgradeWorkflow extends ArcanistWorkflow {
+final class ArcanistUpgradeWorkflow extends ArcanistArcWorkflow {
 
   public function getWorkflowName() {
     return 'upgrade';
   }
 
-  public function getCommandSynopses() {
+  public function getWorkflowSynopses() {
     return phutil_console_format(<<<EOTEXT
       **upgrade**
 EOTEXT
       );
   }
 
-  public function getCommandHelp() {
+  public function getWorkflowHelp() {
     return phutil_console_format(<<<EOTEXT
           Supports: cli
           Upgrade arcanist and libphutil to the latest versions.

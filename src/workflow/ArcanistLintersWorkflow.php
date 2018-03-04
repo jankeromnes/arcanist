@@ -3,20 +3,20 @@
 /**
  * List available linters.
  */
-final class ArcanistLintersWorkflow extends ArcanistWorkflow {
+final class ArcanistLintersWorkflow extends ArcanistArcWorkflow {
 
   public function getWorkflowName() {
     return 'linters';
   }
 
-  public function getCommandSynopses() {
+  public function getWorkflowSynopses() {
     return phutil_console_format(<<<EOTEXT
       **linters** [__options__] [__name__]
 EOTEXT
       );
   }
 
-  public function getCommandHelp() {
+  public function getWorkflowHelp() {
     return phutil_console_format(pht(<<<EOTEXT
           Supports: cli
           List the available and configured linters, with information about

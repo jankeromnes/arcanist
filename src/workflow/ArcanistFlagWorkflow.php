@@ -1,6 +1,6 @@
 <?php
 
-final class ArcanistFlagWorkflow extends ArcanistWorkflow {
+final class ArcanistFlagWorkflow extends ArcanistArcWorkflow {
 
   private static $colorMap = array(
     0 => 'red',     // Red
@@ -44,7 +44,7 @@ final class ArcanistFlagWorkflow extends ArcanistWorkflow {
     return 'flag';
   }
 
-  public function getCommandSynopses() {
+  public function getWorkflowSynopses() {
     return phutil_console_format(<<<EOTEXT
       **flag** [__object__ ...]
       **flag** __object__ --clear
@@ -53,7 +53,7 @@ EOTEXT
       );
   }
 
-  public function getCommandHelp() {
+  public function getWorkflowHelp() {
     return phutil_console_format(<<<EOTEXT
           In the first form, list objects you've flagged. You can provide the
           names of one or more objects (Maniphest tasks T#\##, Differential

@@ -3,20 +3,20 @@
 /**
  * Provides command-line access to the Conduit API.
  */
-final class ArcanistCallConduitWorkflow extends ArcanistWorkflow {
+final class ArcanistCallConduitWorkflow extends ArcanistArcWorkflow {
 
   public function getWorkflowName() {
     return 'call-conduit';
   }
 
-  public function getCommandSynopses() {
+  public function getWorkflowSynopses() {
     return phutil_console_format(<<<EOTEXT
       **call-conduit** __method__
 EOTEXT
       );
   }
 
-  public function getCommandHelp() {
+  public function getWorkflowHelp() {
     return phutil_console_format(<<<EOTEXT
           Supports: http, https
           Allows you to make a raw Conduit method call:

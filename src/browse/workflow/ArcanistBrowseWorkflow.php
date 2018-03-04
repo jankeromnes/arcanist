@@ -3,13 +3,13 @@
 /**
  * Browse files or objects in the Phabricator web interface.
  */
-final class ArcanistBrowseWorkflow extends ArcanistWorkflow {
+final class ArcanistBrowseWorkflow extends ArcanistArcWorkflow {
 
   public function getWorkflowName() {
     return 'browse';
   }
 
-  public function getCommandSynopses() {
+  public function getWorkflowSynopses() {
     return phutil_console_format(<<<EOTEXT
       **browse** [__options__] __path__ ...
       **browse** [__options__] __object__ ...
@@ -17,7 +17,7 @@ EOTEXT
       );
   }
 
-  public function getCommandHelp() {
+  public function getWorkflowHelp() {
     return phutil_console_format(<<<EOTEXT
           Supports: git, hg, svn
           Open a file or object (like a task or revision) in your web browser.

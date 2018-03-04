@@ -3,7 +3,7 @@
 /**
  * Upload a chunk of text to the Paste application, or download one.
  */
-final class ArcanistPasteWorkflow extends ArcanistWorkflow {
+final class ArcanistPasteWorkflow extends ArcanistArcWorkflow {
 
   private $id;
   private $language;
@@ -14,7 +14,7 @@ final class ArcanistPasteWorkflow extends ArcanistWorkflow {
     return 'paste';
   }
 
-  public function getCommandSynopses() {
+  public function getWorkflowSynopses() {
     return phutil_console_format(<<<EOTEXT
       **paste** [--title __title__] [--lang __language__] [--json]
       **paste** __id__ [--json]
@@ -22,7 +22,7 @@ EOTEXT
       );
   }
 
-  public function getCommandHelp() {
+  public function getWorkflowHelp() {
     return phutil_console_format(<<<EOTEXT
           Supports: text
           Share and grab text using the Paste application. To create a paste,

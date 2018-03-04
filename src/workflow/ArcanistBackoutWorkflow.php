@@ -3,7 +3,7 @@
 /**
  * Runs git revert and assigns a high priority task to original author.
  */
-final class ArcanistBackoutWorkflow extends ArcanistWorkflow {
+final class ArcanistBackoutWorkflow extends ArcanistArcWorkflow {
 
   private $console;
   private $conduit;
@@ -13,14 +13,14 @@ final class ArcanistBackoutWorkflow extends ArcanistWorkflow {
     return 'backout';
   }
 
-  public function getCommandSynopses() {
+  public function getWorkflowSynopses() {
     return phutil_console_format(<<<EOTEXT
       **backout**
 EOTEXT
     );
   }
 
-  public function getCommandHelp() {
+  public function getWorkflowHelp() {
     return phutil_console_format(<<<EOTEXT
           Reverts/backouts on a previous commit. Supports: git, hg
    Command is used like this: arc backout <commithash> | <diff revision>

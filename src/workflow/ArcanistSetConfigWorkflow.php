@@ -3,20 +3,20 @@
 /**
  * Write configuration settings.
  */
-final class ArcanistSetConfigWorkflow extends ArcanistWorkflow {
+final class ArcanistSetConfigWorkflow extends ArcanistArcWorkflow {
 
   public function getWorkflowName() {
     return 'set-config';
   }
 
-  public function getCommandSynopses() {
+  public function getWorkflowSynopses() {
     return phutil_console_format(<<<EOTEXT
       **set-config** [__options__] -- __name__ __value__
 EOTEXT
       );
   }
 
-  public function getCommandHelp() {
+  public function getWorkflowHelp() {
     return phutil_console_format(<<<EOTEXT
           Supports: cli
           Sets an arc configuration option.

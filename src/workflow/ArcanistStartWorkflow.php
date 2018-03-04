@@ -9,14 +9,14 @@ final class ArcanistStartWorkflow extends ArcanistPhrequentWorkflow {
     return 'start';
   }
 
-  public function getCommandSynopses() {
+  public function getWorkflowSynopses() {
     return phutil_console_format(<<<EOTEXT
       **start** __object__
 EOTEXT
       );
   }
 
-  public function getCommandHelp() {
+  public function getWorkflowHelp() {
     return phutil_console_format(<<<EOTEXT
           Start tracking work in Phrequent.
 EOTEXT

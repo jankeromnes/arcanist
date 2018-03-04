@@ -3,7 +3,7 @@
 /**
  * Lands a branch by rebasing, merging and amending it.
  */
-final class ArcanistLandWorkflow extends ArcanistWorkflow {
+final class ArcanistLandWorkflow extends ArcanistArcWorkflow {
 
   private $isGit;
   private $isGitSvn;
@@ -35,14 +35,14 @@ final class ArcanistLandWorkflow extends ArcanistWorkflow {
     return 'land';
   }
 
-  public function getCommandSynopses() {
+  public function getWorkflowSynopses() {
     return phutil_console_format(<<<EOTEXT
       **land** [__options__] [__ref__]
 EOTEXT
       );
   }
 
-  public function getCommandHelp() {
+  public function getWorkflowHelp() {
     return phutil_console_format(<<<EOTEXT
           Supports: git, hg
 

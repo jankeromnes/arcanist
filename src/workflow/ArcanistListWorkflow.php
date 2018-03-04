@@ -3,20 +3,20 @@
 /**
  * Lists open revisions in Differential.
  */
-final class ArcanistListWorkflow extends ArcanistWorkflow {
+final class ArcanistListWorkflow extends ArcanistArcWorkflow {
 
   public function getWorkflowName() {
     return 'list';
   }
 
-  public function getCommandSynopses() {
+  public function getWorkflowSynopses() {
     return phutil_console_format(<<<EOTEXT
       **list**
 EOTEXT
       );
   }
 
-  public function getCommandHelp() {
+  public function getWorkflowHelp() {
     return phutil_console_format(<<<EOTEXT
           Supports: git, svn, hg
           List your open Differential revisions.

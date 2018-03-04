@@ -3,7 +3,7 @@
 /**
  * Displays User Tasks.
  */
-final class ArcanistTasksWorkflow extends ArcanistWorkflow {
+final class ArcanistTasksWorkflow extends ArcanistArcWorkflow {
 
   private $tasks;
 
@@ -11,14 +11,14 @@ final class ArcanistTasksWorkflow extends ArcanistWorkflow {
     return 'tasks';
   }
 
-  public function getCommandSynopses() {
+  public function getWorkflowSynopses() {
     return phutil_console_format(<<<EOTEXT
       **tasks** [__options__]
 EOTEXT
       );
   }
 
-  public function getCommandHelp() {
+  public function getWorkflowHelp() {
     return phutil_console_format(<<<EOTEXT
         View all assigned tasks.
 EOTEXT

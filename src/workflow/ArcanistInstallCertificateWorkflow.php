@@ -3,20 +3,20 @@
 /**
  * Installs arcanist certificates.
  */
-final class ArcanistInstallCertificateWorkflow extends ArcanistWorkflow {
+final class ArcanistInstallCertificateWorkflow extends ArcanistArcWorkflow {
 
   public function getWorkflowName() {
     return 'install-certificate';
   }
 
-  public function getCommandSynopses() {
+  public function getWorkflowSynopses() {
     return phutil_console_format(<<<EOTEXT
       **install-certificate** [uri]
 EOTEXT
       );
   }
 
-  public function getCommandHelp() {
+  public function getWorkflowHelp() {
     return phutil_console_format(<<<EOTEXT
           Supports: http, https
           Installs Conduit credentials into your ~/.arcrc for the given install
