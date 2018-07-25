@@ -48,7 +48,7 @@ final class ArcanistGitAPI extends ArcanistRepositoryAPI {
 
 
   public function getSourceControlSystemName() {
-    return 'git';
+    return 'hg';
   }
 
   public function getGitVersion() {
